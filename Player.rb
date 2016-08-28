@@ -8,8 +8,9 @@ class Player
 
   def input_color
 
-    puts "welcome to the mastermind game, you can choose 4 colors from r(red), b(blue),p(purple),o(orange),g(green) and w(white) "
-    until @input.length == 4
+    puts "you can choose 4 colors from r(red), b(blue),p(purple),o(orange),g(green) and w(white) "
+
+    until @input.length == 4 do
       puts "please input the color you choose"
 
       color_pick = gets.chomp().to_s
@@ -17,13 +18,15 @@ class Player
         puts"please select from given colors\n"
       elsif @input.include? color_pick
         puts "you can't choose the same color twice\n"
-
       else
         @input << color_pick
       end
+
     end
 
-    # puts "#{@input}"
+    puts "input_color is #{@input}"
+    #return @input
+
   end
 
 
@@ -31,6 +34,6 @@ class Player
 
 end
 
-#
+# #
 # player = Player.new
 # player.input_color

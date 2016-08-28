@@ -17,7 +17,9 @@ class Computer
       end
     end
 
-    # puts "#{@answer}"
+    puts "answer: #{@answer}"
+    return @answer
+
   end
 
 end
