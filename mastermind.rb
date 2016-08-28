@@ -7,11 +7,11 @@ class MasterMind
   end
 
   def play
-    if @player.pick_codebreaker?
+    # if @player.pick_codebreaker?
       playing(@computer, @player)
-    else
-      playing(@player,@computer)
-    end
+    # else
+    #   playing(@player,@computer)
+    # end
   end
 
   private
@@ -20,9 +20,9 @@ class MasterMind
     answer = maker.initialize_answer
     12.times do |i|
 
-      input = coder.input
+      input = coder.input_color
       @board.display input, i
-      if game_over?
+      if game_over? input, answer
         puts "Congratulations, you have got the correct answer #{@board.answer}"
         break
       end
