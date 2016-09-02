@@ -13,6 +13,11 @@ class Board
     puts "your input is #{input}"
   end
 
+  def answer
+    @computer.initialize_answer
+  end
+
+
   def feedback answer, input
     count_same_color = 0
     count_same_both = 0
@@ -26,8 +31,10 @@ class Board
 
       end
     end
-    puts "you have #{count_same_color} number of balls with same color but different position"
-    puts "you have #{count_same_both} number of balls with same color and different position"
+
+
+    puts "you have #{count_same_color} number of balls with same color but different position\n"
+    puts "you have #{count_same_both} number of exact guess\n"
 
   end
 

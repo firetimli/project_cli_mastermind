@@ -1,6 +1,7 @@
 require_relative "Board"
 require_relative "Computer"
-require_relative "Board"
+require_relative "Player"
+require "pry"
 class MasterMind
 
   def initialize
@@ -19,12 +20,20 @@ class MasterMind
 
   def  playing maker,coder
     puts "welcome to the mastermind game"
+    input = Array.new
     answer = maker.initialize_answer
+
     12.times do |i|
 
-      input = coder.input_color
-      puts "the input is #{input}"
-      puts "the answer is #{answer}"
+      #binding.pry
+
+      # input = @player.instance_variable_get("@input")
+      input = @player.input_color
+
+      #
+      # puts "the input is #{@player.input_color}"
+      # puts "the answer is #{answer}"
+
 
       @board.display input, i
 
@@ -34,8 +43,13 @@ class MasterMind
       end
 
       @board.feedback answer, input
-      puts "There's #{@board.feedback_result[:black]} exact guesses and #{@board.feedback_result[:white]} close result"
+      # puts "ok ..."
+
+      # puts "There's #{@board.feedback_result[:black]} exact guesses and #{@board.feedback_result[:white]} close result"
     end
+
+
+
   end
 
   def game_over? input, answer
